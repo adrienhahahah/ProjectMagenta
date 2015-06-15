@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-name = 'TWMagenta'
+name = 'Project Magenta'
 snapshot = True
 version = "0.0.0"
 update_url = 'http://n6.io/magenta/update.json'
