@@ -81,6 +81,27 @@ class bufferController(object):
   if hasattr(sound.URLPlayer, "stream"):
    sound.URLPlayer.stream.volume = self.session.settings["sound"]["volume"]
   self.session.sound.play("volume_changed.ogg")
+
+ def interact(self):
+  tweet = self.get_tweet()
+  url=None
+  urls = utils.find_urls(tweet)
+  if len(urls) == 1:
+   url=urls[0]
+  elif len(urls) > 1:
+   urls_list = dialogs.urlList.urlList()
+   urls_list.populate_list(urls)
+   if urls_list.get_response() == widgetUtils.OK:
+    url=urls_list.get_string()
+   if hasattr(urls_list, "destroy"): urls_list.destroy()
+  if url != None:
+   output.speak(_(u"Opening media..."), True)
+  if sound.URLPlayer.is_playable(url=url, play=True, volume=self.session.settings["sound"]["volume"]) == False:
+    return webbrowser.open_new_tab(url)
+#  else:
+#   output.speak(_(u"Not actionable."), True)
+#   self.session.sound.play("error.ogg")
+
  def start_stream(self):
   pass
 
@@ -226,14 +247,22 @@ class baseBufferController(bufferController):
   uri = None
   if tweet.has_key("long_uri"):
    uri = tweet["long_uri"]
-  tweet = self.session.twitter.twitter.show_status(id=tweet_id)
+  try:
+   tweet = self.session.twitter.twitter.show_status(id=tweet_id)
+  except TwythonError as e:
+   utils.twitter_error(e)
+   return
   if uri != None:
    tweet["text"] = twishort.get_full_text(uri)
   l = tweets.is_long(tweet)
   while l != False:
    tweetsList.append(tweet)
    id = tweets.get_id(l)
-   tweet = self.session.twitter.twitter.show_status(id=id)
+   try:
+    tweet = self.session.twitter.twitter.show_status(id=id)
+   except TwythonError as e:
+    utils.twitter_error(e)
+    return
    l = tweets.is_long(tweet)
    if l == False:
     tweetsList.append(tweet)

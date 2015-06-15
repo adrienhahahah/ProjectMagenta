@@ -18,11 +18,11 @@ class general(wx.Panel, baseDialog.BaseWXDialog):
   langBox.Add(language, 0, wx.ALL, 5)
   langBox.Add(self.language, 0, wx.ALL, 5)
   sizer.Add(langBox, 0, wx.ALL, 5)
-  self.ask_at_exit = wx.CheckBox(self, -1, _(U"ask before exiting "+application.name))
+  self.ask_at_exit = wx.CheckBox(self, -1, _(U"ask before exiting {0}").format(application.name,))
   sizer.Add(self.ask_at_exit, 0, wx.ALL, 5)
-  self.play_ready_sound = wx.CheckBox(self, -1, _(U"Play a sound when "+application.name+" launches"))
+  self.play_ready_sound = wx.CheckBox(self, -1, _(U"Play a sound when {0} launches").format(application.name,))
   sizer.Add(self.play_ready_sound, 0, wx.ALL, 5)
-  self.speak_ready_msg = wx.CheckBox(self, -1, _(U"Speak a message when "+application.name+" launches"))
+  self.speak_ready_msg = wx.CheckBox(self, -1, _(U"Speak a message when {0} launches").format(application.name,))
   sizer.Add(self.speak_ready_msg, 0, wx.ALL, 5)
   self.use_invisible_shorcuts = wx.CheckBox(self, -1, _(u"Use invisible interface's keyboard shortcuts while GUI is visible"))
   sizer.Add(self.use_invisible_shorcuts, 0, wx.ALL, 5)
@@ -284,32 +284,7 @@ class audioServicesPanel(wx.Panel):
   apiKeyBox.Add(apiKeyLabel, 0, wx.ALL, 5)
   apiKeyBox.Add(self.apiKey, 0, wx.ALL, 5)
   mainSizer.Add(apiKeyBox, 0, wx.ALL, 5)
-  first_sizer = wx.BoxSizer(wx.HORIZONTAL)
-  self.dropbox = wx.Button(self, -1)
-  first_sizer.Add(self.dropbox, 0, wx.ALL, 5)
-  mainSizer.Add(first_sizer, 0, wx.ALL, 5)
   self.SetSizer(mainSizer)
-
- def set_dropbox(self, active=True):
-  if active == True:
-   self.dropbox.SetLabel(_(u"Unlink your Dropbox account"))
-  else:
-   self.dropbox.SetLabel(_(u"Link your Dropbox account"))
-   
- def show_dialog(self):
-  wx.MessageDialog(self, _(u"The authorization request will be opened in your browser. Copy the code from Dropbox and paste it into the text box which will appear. You only need to do this once."), _(u"Authorization"), wx.OK).ShowModal()
-
- def get_response(self):
-  dlg = wx.TextEntryDialog(self, _(u"Enter the code here."), _(u"Verification code"))
-  if dlg.ShowModal() == wx.ID_CANCEL:
-   return False
-  return dlg.GetValue()
-
- def show_error(self):
-  wx.MessageDialog(self, _(u"Error during authorization. Try again later."), _(u"Error!"), wx.ICON_ERROR).ShowModal()
-
- def get_dropbox(self):
-  return self.dropbox.GetLabel()
 
 class configurationDialog(baseDialog.BaseWXDialog):
 
