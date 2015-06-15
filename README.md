@@ -1,12 +1,12 @@
-# TWMagenta
+# Project Magenta
 
 ## What is it?
 
-TWMagenta is a fork of [TWBlue](http://twblue.es) with enhansements. TWBlue changes are frequently merged in, and bug fixes are occasionally sent upstream.
+Project Magenta is a fork of [TWBlue](http://twblue.es) with enhansements. TWBlue changes are frequently merged in, and bug fixes are occasionally sent upstream.
 
-## Is TWMagenta stable?
+## Is Project Magenta stable?
 
-TWMagenta merges changes from the next-gen branch of TWBlue. This means that new features and bug fixes can be pushed as quickly as possible. This also means that bugs can (and will) pop up and features, translations, or documentation may not be complete. It should be stable enough for daily use, but [it is provided "as is"](http://www.gnu.org/licenses/gpl-3.0.en.html).
+Project Magenta merges changes from the next-gen branch of TWBlue. This means that new features and bug fixes can be pushed as quickly as possible. This also means that bugs can (and will) pop up and features, translations, or documentation may not be complete. It should be stable enough for daily use, but [it is provided "as is"](http://www.gnu.org/licenses/gpl-3.0.en.html).
 
 ## Which platforms are supported?
 
@@ -18,4 +18,4 @@ See the [TWBlue readme](http://github.com/manuelcortez/twblue).
 
 ## Are binary distributions available?
 
-Yes! See [the TWMagenta website](http://n6.io/magenta).
+Yes! See [the Project Magenta website](http://n6.io/magenta).
