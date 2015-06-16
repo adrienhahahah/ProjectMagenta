@@ -2,7 +2,7 @@
 
 ## What is it?
 
-Project Magenta is a fork of [TWBlue](http://twblue.es) with enhansements. TWBlue changes are frequently merged in, and bug fixes are occasionally sent upstream.
+Project Magenta is a fork of [TWBlue](http://twblue.es) with enhancements. TWBlue changes are frequently merged in, and bug fixes are occasionally sent upstream.
 
 ## Is Project Magenta stable?
 
