@@ -60,7 +60,7 @@ class sessionManagerController(object):
   if self.view.get_response() == widgetUtils.OK:
    self.do_ok()
 #  else:
-  self.view.destroy()
+#  self.view.destroy()
 
  def do_ok(self):
   log.debug("Starting sessions...")
