@@ -89,8 +89,8 @@ class globalSettingsController(object):
   config.app["app-settings"]["use_Codeofdusk_audio_handlers"] = self.dialog.get_value("general", "use_Codeofdusk_audio_handlers")
   config.app["app-settings"]["prefer_geocodes"] = self.dialog.get_value("general", "prefer_geocodes")
   config.app["app-settings"]["speak_ready_msg"] = self.dialog.get_value("general", "speak_ready_msg")
-  if config.app["app-settings"]["use_slow_audio_algo"] != self.dialog.get_value("general", "use_invisible_shorcuts"):
-   config.app["app-settings"]["use_slow_audio_algo"] = self.dialog.get_value("general", "use_invisible_shorcuts")
+  if config.app["app-settings"]["use_slow_audio_algo"] != self.dialog.get_value("general", "use_slow_audio_algo"):
+   config.app["app-settings"]["use_slow_audio_algo"] = self.dialog.get_value("general", "use_slow_audio_algo")
    self.needs_restart=True
   if config.app["proxy"]["server"] != self.dialog.get_value("proxy", "server") or config.app["proxy"]["port"] != self.dialog.get_value("proxy", "port") or config.app["proxy"]["user"] != self.dialog.get_value("proxy", "user") or config.app["proxy"]["password"] != self.dialog.get_value("proxy", "password"):
    if self.is_started == True:
