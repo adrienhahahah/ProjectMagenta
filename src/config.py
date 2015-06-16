@@ -5,7 +5,7 @@ import logging
 
 log = logging.getLogger("config")
 
-MAINFILE = "twblue.conf"
+MAINFILE = "ProjectMagenta.conf"
 MAINSPEC = "app-configuration.defaults"
 
 app = None
