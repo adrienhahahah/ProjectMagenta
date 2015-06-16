@@ -1,6 +1,6 @@
 [info]
 name = Chicken Nugget
-desc = Remaps TWBlue shortcuts to their  equivalents in Christopher Toth's Chicken Nugget Twitter client.
+desc = Remaps Project Magenta shortcuts to their  equivalents in Christopher Toth's Chicken Nugget Twitter client.
 author = Bill Dengler <codeofdusk@gmail.com>
 
 [keymap]
