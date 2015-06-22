@@ -1,6 +1,7 @@
 ﻿# -*- coding: utf-8 -*-
 """ Setup file to create executables and distribute the source code of this application. Don't forget this file! """
 ############################################################
+#Copyright (c) 2015 - Bill Dengler <codeofdusk@gmail.com>
 #    Copyright (c) 2014 José Manuel Delicado Alcolea <jmdaweb@gmail.com>
 #    Copyright (c) 2013, 2014 Manuel Eduardo Cortéz Vallejo <manuel@manuelcortez.net>
 #       
@@ -44,7 +45,7 @@ def get_data():
  import enchant
  return [
   ("", ["conf.defaults", "app-configuration.defaults", "icon.ico"]),
-  ("dropbox", ["trusted-certs.crt"]),
+  ("pocket", ["trusted-certs.crt"]),
   ("requests", ["cacert.pem"]),
   ("accessible_output2/lib", glob("accessible_output2/lib/*.dll")),
   ("keys/lib", glob("keys/lib/*.dll")),
