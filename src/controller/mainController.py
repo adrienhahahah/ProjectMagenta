@@ -429,7 +429,7 @@ class Controller(object):
   start = page.buffer.list.get_selected()
   for i in xrange(start,count):
    page.buffer.list.select_item(i)
-   if string in page.get_message():
+   if string.lower() in page.get_message().lower():
     return output.speak(page.get_message(), True)
   output.speak(unicode(string)+unicode(" ")+_(u"not found."), True)
   page.buffer.list.select_item(start)
