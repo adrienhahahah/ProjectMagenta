@@ -44,6 +44,7 @@ toggle_buffer_mute = alt+win+shift+m
 toggle_session_mute = alt+win+m
 toggle_autoread = alt+win+e
 search = alt+win+-
+find = alt+win+/
 edit_keystrokes = alt+win+k
 view_user_lists = alt+win+l
 get_more_items = alt+win+pageup
