@@ -16,7 +16,11 @@ def load_config(config_path, configspec_path=None, *args, **kwargs):
  validator = Validator()
  validated = config.validate(validator, copy=True)
  if validated == True:
-  config.write()
+  try:
+   config.write()
+  except:
+   output.speak("An exception occurred while writing your configuration. It will be deleted and regenerated at next launch. If this error persists, contact the " + application.name + " developers.",True)
+   os.remove(config_path)
   return config
 
 def is_blank(arg):
