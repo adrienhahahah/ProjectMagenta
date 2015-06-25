@@ -49,11 +49,11 @@ if system == "Linux":
 log = logging.getLogger("main")
 
 def setup():
- languageHandler.setLanguage(config.app["app-settings"]["language"])
  if system == "Windows":
   updater.do_update()
  log.debug("Starting " + application.name + " %s" % (application.version,))
  config.setup()
+ languageHandler.setLanguage(config.app["app-settings"]["language"])
  fixes.setup()
  log.debug("Using %s %s" % (platform.system(), platform.architecture()[0]))
  log.debug("Application path is %s" % (paths.app_path(),))
