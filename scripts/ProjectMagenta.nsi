@@ -13,9 +13,9 @@ SetCompressor /solid lzma
 SetDatablockOptimize on
 VIAddVersionKey ProductName "ProjectMagenta"
 VIAddVersionKey LegalCopyright "Copyright 2015 Bill Dengler."
-VIAddVersionKey ProductVersion "0.5.2"
-VIAddVersionKey FileVersion "0.5.2"
-VIProductVersion "0.5.2.0"
+VIAddVersionKey ProductVersion "0.5.3"
+VIAddVersionKey FileVersion "0.5.3"
+VIProductVersion "0.5.3.0"
 !insertmacro MUI_PAGE_WELCOME
 !define MUI_LICENSEPAGE_RADIOBUTTONS
 !insertmacro MUI_PAGE_LICENSE "license.txt"
