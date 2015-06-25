@@ -4,6 +4,7 @@ from validate import Validator, ValidateError
 import os
 import string
 import output
+import application
 class ConfigLoadError(Exception): pass
 
 def load_config(config_path, configspec_path=None, *args, **kwargs):
