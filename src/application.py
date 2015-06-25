@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 name = 'Project Magenta'
 snapshot = True
-version = "0.5.3"
+version = "0.5.4"
 update_url = 'http://n6.io/magenta/update.json'
 author = u"Bill Dengler"
 authorEmail = "codeofdusk@gmail.com"
