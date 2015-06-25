@@ -6,7 +6,7 @@ import utils
 progress_dialog = None
 
 def available_update_dialog(version, description):
-	dialog = wx.MessageDialog(None, _(u"There's a new %s version available. Would you like to download it now?\n\n %s version: %s\n\nChanges:\n%s") % (application.name, application.name, version, description), _(u"New version for %s") % application.name, style=wx.YES|wx.NO|wx.ICON_WARNING)
+	dialog = wx.MessageDialog(None, _(u"There's a new %s version available. Would you like to download it now?\n\n %s version: %s\n\nChanges:\n%s") % (application.name, application.name, version, description), _(u"New version of %s") % application.name, style=wx.YES|wx.NO|wx.ICON_WARNING)
 	if dialog.ShowModal() == wx.ID_YES:
 		return True
 	else:

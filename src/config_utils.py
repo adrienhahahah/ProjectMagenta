@@ -3,6 +3,7 @@ from configobj import ConfigObj, ParseError
 from validate import Validator, ValidateError
 import os
 import string
+import output
 class ConfigLoadError(Exception): pass
 
 def load_config(config_path, configspec_path=None, *args, **kwargs):
