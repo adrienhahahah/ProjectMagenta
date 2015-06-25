@@ -3,6 +3,7 @@ import platform
 import os
 import sys
 import logging
+import application
 from platform_utils import paths as paths_
 
 from functools import wraps
@@ -49,7 +50,7 @@ def logs_path():
  return path
 
 @merge_paths
-def data_path(app_name='TW blue'):
+def data_path(app_name=application.name):
 # if platform.system() == "Windows":
 #  import shlobj
 #  data_path = os.path.join(shlobj.SHGetFolderPath(0, shlobj.CSIDL_APPDATA), app_name)
