@@ -45,7 +45,7 @@ def get_data():
  import enchant
  return [
   ("", ["conf.defaults", "app-configuration.defaults", "icon.ico"]),
-  ("requests", ["cacert.pem"]),
+    ("requests", ["cacert.pem"]),
   ("accessible_output2/lib", glob("accessible_output2/lib/*.dll")),
   ("keys/lib", glob("keys/lib/*.dll")),
 ("keymaps", glob("keymaps/*.*")),
