@@ -49,21 +49,21 @@ if system == "Linux":
 log = logging.getLogger("main")
 
 def setup():
- if system == "Windows":
-  updater.do_update()
  log.debug("Starting " + application.name + " %s" % (application.version,))
  config.setup()
- languageHandler.setLanguage(config.app["app-settings"]["language"])
  fixes.setup()
  log.debug("Using %s %s" % (platform.system(), platform.architecture()[0]))
  log.debug("Application path is %s" % (paths.app_path(),))
  log.debug("config path  is %s" % (paths.config_path(),))
  sound.setup()
  output.setup()
+ languageHandler.setLanguage(config.app["app-settings"]["language"])
  keys.setup()
  from controller import mainController
  from sessionmanager import sessionManager
  app = widgetUtils.mainLoopObject()
+ if system == "Windows":
+  updater.do_update()
  sm = sessionManager.sessionManagerController()
  sm.fill_list()
  if len(sm.sessions) == 0: sm.show()
