@@ -36,6 +36,8 @@ class general(wx.Panel, baseDialog.BaseWXDialog):
   sizer.Add(self.use_Codeofdusk_audio_handlers, 0, wx.ALL, 5)
   self.prefer_geocodes = wx.CheckBox(self, -1, _(u"Codeofdusk's tweet interaction handlers: always display geocode on interact, even if the tweet contains URLs"))
   sizer.Add(self.prefer_geocodes, 0, wx.ALL, 5)
+  self.handle_longtweets = wx.CheckBox(self, wx.NewId(), _(u"Use Codeofdusk's longtweet handlers (may decrease client performance)"))
+  sizer.Add(self.handle_longtweets, 0, wx.ALL, 5)
   kmbox =  wx.BoxSizer(wx.VERTICAL)
   km_label = wx.StaticText(self, -1, _(u"Keymap"))
   self.km = wx.ComboBox(self, -1, choices=keymaps, style=wx.CB_READONLY)
