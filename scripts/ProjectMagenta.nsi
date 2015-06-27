@@ -13,9 +13,9 @@ SetCompressor /solid lzma
 SetDatablockOptimize on
 VIAddVersionKey ProductName "ProjectMagenta"
 VIAddVersionKey LegalCopyright "Copyright 2015 Bill Dengler."
-VIAddVersionKey ProductVersion "0.5.4"
-VIAddVersionKey FileVersion "0.5.4"
-VIProductVersion "0.5.4.0"
+VIAddVersionKey ProductVersion "0.6.1"
+VIAddVersionKey FileVersion "0.6.1"
+VIProductVersion "0.6.1.0"
 !insertmacro MUI_PAGE_WELCOME
 !define MUI_LICENSEPAGE_RADIOBUTTONS
 !insertmacro MUI_PAGE_LICENSE "license.txt"
@@ -69,7 +69,7 @@ WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall" "Publishe
 WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\ProjectMagenta" "DisplayVersion" "0.5.3"
 WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\ProjectMagenta" "URLInfoAbout" "http://n6.io/magenta"
 WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\ProjectMagenta" "VersionMajor" 0
-WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\ProjectMagenta" "VersionMinor" 5
+WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\ProjectMagenta" "VersionMinor" 6
 WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\ProjectMagenta" "NoModify" 1
 WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\ProjectMagenta" "NoRepair" 1
 SectionEnd
