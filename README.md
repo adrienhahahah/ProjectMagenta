@@ -1,131 +1,28 @@
-TWBlue -
-======
+# Project Magenta
 
-Copyright (C) 2015. [Technow S.L.](https://www.technow.es)
+## What is it?
 
-TW Blue is an app designed to use Twitter simply and efficiently while using minimal system resources.
-With this app you’ll have access to twitter features such as:
+Project Magenta is a fork of [TWBlue](http://twblue.es) with enhancements. TWBlue changes are frequently merged in, and bug fixes are occasionally sent upstream.
 
-* Create, reply to, retweet and delete tweets,
-* Add and remove tweets from favourites,
-* Send and delete direct messages,
-* See your friends and followers,
-* Follow, unfollow, block and report users as spam,
-* Open a user’s timeline, which will allow you to get that user’s tweets separately,
-* Open URLs when attached to a tweet or direct message,
-* Play audio tweets
-* and more!
+## Is Project Magenta stable?
 
-See [TWBlue's webpage](http://twblue.es) for more details.
+Project Magenta merges changes from the next-gen branch of TWBlue. This means that new features and bug fixes can be pushed as quickly as possible. This also means that bugs can (and will) pop up and features, translations, or documentation may not be complete. It should be stable enough for daily use, but [it is provided "as is"](http://www.gnu.org/licenses/gpl-3.0.en.html).
 
-## Using TWBlue from sources
+## Which platforms are supported?
 
-This document describes how to run tw blue from source, and, after that, how to build a binary version, which doesn't need Python and the other dependencies to run.
+Windows is fully supported, and Gnu/Linux support is under development. OS X cannot be supported because WXPython does not work with VoiceOver.
 
-### Required dependencies.
+## How can I build it?
 
-Although most dependencies can be found in the windows-dependencies directory, we provide links to their official websites. If you are cloning with git, don't forget to initialize and update the submodules to get the windows-dependencies folder. You can use these two commands to perform this task from git bash:  
-    git submodule init  
-    git submodule update
+See the [TWBlue readme](http://github.com/manuelcortez/twblue).
 
-	All the dependencies provided in this folder are prebuilt. If you want to build them from source, you will need Microsoft visual Studio 2008.
+## Are binary distributions available?
 
-#### Dependencies packaged in windows installers
+Yes! See [the Project Magenta website](http://n6.io/magenta).
+## What's with the version numbers?
 
-* [Python,](http://python.org) version 2.7.10  
-If you want to build both x86 and x64 binaries, you can install python x86 to C:\python27 and python x64 to C:\python27x64, for example.
-* [wxPython](http://www.wxpython.org) for Python 2.7, version 3.0.2.0
-* [Python windows extensions (pywin32)](http://www.sourceforge.net/projects/pywin32/) for python 2.7, build 219
-* [Pycurl](http://pycurl.sourceforge.net) 7.19.5.1 for Python 2.7: [32-bit downloads,](https://pypi.python.org/pypi/pycurl/7.19.5.1) [64-bit downloads](http://www.lfd.uci.edu/~gohlke/pythonlibs/)
-Note: the x64 version is in wheel format instead of executable installer, so you have to install it using pip. For example: C:\python27x64\scripts\pip install pycurl-7.19.5.1-cp27-none-win_amd64.whl
-* [PyEnchant,](http://pythonhosted.org/pyenchant/) version 1.6.6.  
-x64 version has been built by TWBlue developers, so you only will find it in windows-dependencies folder
+Suppose the current Project Magenta version is x.y.z:
 
-The windows installers are available only in the windows-dependencies folder
-
-To build a binary version:
-
-* [Py2exe](http://www.sourceforge.net/projects/py2exe/) for Python 2.7, version 0.6.9
-
-#### Dependencies that must be installed using easy_install
-
-setuptools install a script, called easy_install. You can find it in the python scripts directory. To install packages using easy_install, you have to navigate to the scripts directory using a command prompt, for example:
-
-    cd C:\python27x64\scripts
-
-	You can also add the scripts folder to your path environment variable.
-	Note: pip and setuptools are included in the Python installer since version 2.7.9.
-
-	After that, run the following command to install a package, replacing packagename with the names listed below:
-
-    easy_install -Z package
-
-	The -z switch unzips the package, instead of installing it compressed. If you add the --upgrade switch, you can upgrade a package to its latest version. The following packages need to be installed:
-
-* pypubsub
-* configobj
-* requests-oauthlib
-* future
-* pygeocoder
-* suds
-* arrow
-* goslate
-* markdown
-* pocket
-
-easy_install will automatically get the additional libraries that these packages need to work properly.
-Run the following command to quickly install and upgrade all packages and their dependencies:
-easy_install -Z --upgrade six configobj goslate markdown future pocket suds requests oauthlib requests-oauthlib pypubsub pygeocoder arrow
-
-#### Other dependencies
-
-These dependencies are located in the windows-dependencies directory. You don't need to install or modify them.
-
-* Bootstrap 1.2.1: included in dependencies directory.  
-This dependency has been built using pure basic 4.61. Its source can be found at http://hg.q-continuum.net/updater
-* [oggenc2.exe,](http://www.rarewares.org/ogg-oggenc.php) version 2.87  
-* Microsoft Visual c++ 2008 redistributable dlls.
-
-#### Dependencies required to build the installer
-
-* [NSIS unicode,](http://www.scratchpaper.com/) version 2.46.5
-
-### Running TW Blue from source
-
-Now that you have installed all these packages, you can run TW Blue from source using a command prompt. Navigate to the repo's src directory, and type the following command:
-
-    python main.py
-
-	If necessary, change the first part of the command to reflect the location of your python executable. You can run TW Blue using python x86 and x64
-
-### Generating the documentation
-
-To generate the documentation in html format, navigate to the doc folder inside this repo. After that, run this command:
-python generator.py
-The documentation will be generated, placing each language in a separate folder in the doc directory. Move these folders (for example de, en, es, fr, it, ...) to src/documentation, creating the directory if necesary.
-Also, copy the license.txt located in the root of the repo to the documentation folder.
-
-### Building a binary version
-
-A binary version doesn't need python and the other dependencies to run, it's the same version that you will find on the TW Blue website if you download the zip files or the snapshot versions.
-
-To build it, run the following command from the src folder:
-
-    python setup.py py2exe
-
-	You will find the binaries in the dist directory.
-
-### Building an installer
-
-If you want to install TWBlue in your computer, you must create the installer first. Follow these steps:
-
-* Navigate to the src directory, and create a binary version for x86: C:\python27\python setup.py py2exe
-* Move the dist directory to the scripts folder in this repo, and rename it to twblue
-* Repeat these steps with Python for x64: C:\python27x64\python setup.py py2exe
-* Move the new dist directory to the scripts folder, and rename it to twblue64
-* Go to the scripts folder, right click on the twblue.nsi file, and choose compyle unicode NSIS script
-* This may take a while. After the process, you will find the installer in the scripts folder
-
-### How to generate a translation template
-
-Run the gen_pot.bat file, located in the tools directory. Your python installation must be in your path environment variable. The pot file will appear in the tools directory.
+*   x represents the master TWBlue version since Project Magenta's release. Project Magenta was released when no next-gen master build was available, so the initial release x was 0\. At the current pace of upstream development, it'll probably stay 0 for a while.
+*   y represents pulls from the upstream repository since the last x version bump. First version was 1, since we only pulled once from upstream.
+*   z represents Project Magenta specific changes made since the last y version bump. Initially 1, since one set of changes was made since pulling.
