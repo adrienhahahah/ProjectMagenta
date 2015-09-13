@@ -99,7 +99,7 @@ options = {
   windows = [
    {
     'script': 'main.py',
-    'dest_base': 'TWBlue',
+    'dest_base': 'ProjectMagenta',
 }
   ],
   install_requires = [
