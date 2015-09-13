@@ -20,9 +20,4 @@ See the [TWBlue readme](http://github.com/manuelcortez/twblue).
 
 Yes! See [the Project Magenta website](http://n6.io/magenta).
 ## What's with the version numbers?
-
-Suppose the current Project Magenta version is x.y.z:
-
-*   x represents the master TWBlue version since Project Magenta's release. Project Magenta was released when no next-gen master build was available, so the initial release x was 0\. At the current pace of upstream development, it'll probably stay 0 for a while.
-*   y represents pulls from the upstream repository since the last x version bump. First version was 1, since we only pulled once from upstream.
-*   z represents Project Magenta specific changes made since the last y version bump. Initially 1, since one set of changes was made since pulling.
+The version number represents the number of each build. The count started at 1 and is incremented by one for each new build.
