@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 name = 'Project Magenta'
 snapshot=True
-version = "0.10.0"
-update_url = 'http://n6.io/magenta/update.json'
+version = "2"
+update_url = 'http://n6.io/magenta/builds/update.json'
 author = u"Bill Dengler"
 authorEmail = "codeofdusk@gmail.com"
 copyright = u"Copyright (C) 2015, Bill Dengler\nBased on TWBlue, Copyright (C) 2015, Technow S.L."
