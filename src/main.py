@@ -67,6 +67,12 @@ def setup():
  if system == "Windows":
   if config.app["app-settings"]["donation_dialog_displayed"] == False:
    donation()
+  #Try to delete the config if it exists, since not compatible with TWBlue. Don't check for exceptions.
+  try:
+   import shutil
+   shutil.rmtree(paths.config_path())
+  except:
+   pass
   updater.do_update()
  sm = sessionManager.sessionManagerController()
  sm.fill_list()
