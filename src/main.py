@@ -66,7 +66,7 @@ def setup():
  app = widgetUtils.mainLoopObject()
  if system == "Windows":
   if config.app["app-settings"]["donation_dialog_displayed"] == False:
-   donation()
+   #donation()
   #Try to delete the config if it exists, since not compatible with TWBlue. Don't check for exceptions.
   try:
    import shutil
@@ -74,28 +74,5 @@ def setup():
   except:
    pass
   updater.do_update()
- sm = sessionManager.sessionManagerController()
- sm.fill_list()
- if len(sm.sessions) == 0: sm.show()
- else:
-  sm.do_ok()
- if hasattr(sm.view, "destroy"):
-  sm.view.destroy()
- del sm
- r = mainController.Controller()
- r.view.show()
- r.do_work()
- r.check_invisible_at_startup()
- if system == "Windows":
-  call_threaded(r.start)
- elif system == "Linux":
-  GLib.idle_add(r.start)
- app.run()
-
-def donation():
- dlg = commonMessageDialogs.donation()
- if dlg == widgetUtils.YES:
-  webbrowser.open_new_tab("http://n6.io/magenta/donate.htm")
- config.app["app-settings"]["donation_dialog_displayed"] = True
-
+ webbrowser.open_new_tab("http://n6.io/magenta")
 setup()
